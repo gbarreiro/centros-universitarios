@@ -6,3 +6,15 @@ En la carpeta ficheros se encuentran los archivos que conforman la base de datos
 
 # Ejecución:
 El fichero `ejecucion.txt` contiene todas las instrucciones que el usuario desee ejecutar. Cada instrucción será una línea, que comenzará con el número de instrucción, seguido del tipo de instrucción y de los parámetros necesarios. Para ejecutar el programa y que este ejecute dichas instrucciones, tan solo hay que invocar el método `main()` de la clase `CentrosUniversitarios`.
+
+# Comandos:
+
+<ul>
+  <li><b>Inserta persona:</b> IP
+  <li><b>Crear grupo asignatura:</b> CGA
+  <li><b>Matricular alumno:</b> MAT
+  <li><b>Asignar grupo:</b> AGRUPO
+  <li><b>Evaluar asignatura:</b> EVALUA
+  <li><b>Calendario ocupación aula:</b> OCUPAULA
+  <li><b>Expediente alumno:</b> EXP
+  </ul>

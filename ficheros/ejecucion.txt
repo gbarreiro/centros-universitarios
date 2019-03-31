@@ -1,0 +1,105 @@
+******************************************************************************************************************************************
+*      PROFESOR --  InsertaPersona  perfil dni "apellidos,nombre" fechaNac categoria departamento
+******************************************************************************************************************************************
+*     Avisos:
+*	1 - Comando incorrecto 
+*	2 - numero de argumentos incorrecto (falta fecha)
+* 	3 - Fecha incorrecta (31/6/1981)
+*                  4 - Profesor ya existente  (ese DNI ya corresponde a otro profesor)
+*	5 - OK (debe insertar el profesor en el fichero de profesores)
+* 
+1 InsertPerson     profesor 39074502W   "Alvarez Gonzalez, Francisco"  5/6/1977   asociado DET 
+2 InsertaPersona profesor 39074502W  "Alvarez Gonzalez, Francisco"   asociado DET 
+3 InsertaPersona profesor 39074502W  "Alvarez Gonzalez, Francisco"  31/6/1981 asociado DET 
+4 InsertaPersona profesor  43006219Y "Alvarez Gonzalez, Francisco"  5/6/1977 asociado DET 
+5 InsertaPersona profesor 39074502W   "Alvarez Gonzalez, Francisco"  5/6/1977 asociado DET 
+*
+*  ALUMNO -- InsertaPersona alumno dni nombre fechaNac fechaIngreso
+*               6 - Dni incorrecto
+*               7 - Fecha de ingreso incorrecta
+*               8 - Alumno ya existente
+*               9 - OK
+6 InsertaPersona alumno  4605172W   "Fernandez Soto, Alvaro"    10/7/1997   1/9/2016 
+7 InsertaPersona alumno  46051720W  "Fernandez Soto, Alvaro"    10/7/1997   1/9/2006 
+8 InsertaPersona alumno  44185060F    "Fernandez Soto, Alvaro"    10/7/1997   1/9/2016 
+9 InsertaPersona alumno  46051720W  "Fernandez Soto, Alvaro"    10/7/1997   1/9/2016 
+*
+*  AsignaGrupo -- AsignaGrupo perfil dni asignatura tipoGrupo grupo
+*             10 - Profesor inexistente
+*             11 - Tipo de grupo incorrecto
+*             12 - Grupo inexistente
+*             13 - Grupo ya asignado
+*             14 - Asignatura no presente en POD del profesor
+*             15 - OK
+*             16 - Numero de grupos superior al contemplado en POD 
+*              17 - Solape profesor
+*
+10  AsignaGrupo profesor  41074273Z PI X 2
+11  AsignaGrupo profesor  41074273T PI X 2
+12  AsignaGrupo profesor  41074273T PI A 3
+13   AsignaGrupo profesor  41074273T PI B 2
+14   AsignaGrupo profesor  41074273T PII B 2
+15   AsignaGrupo profesor  41074273T PI B 3
+16   AsignaGrupo profesor  39053207A CD A 2
+17   AsignaGrupo profesor  44331040D SEG B 3  
+*
+*               18 - Alumno inexistente 
+*               19 - Alumno no matriculado
+*               20 - Aula completa
+*                21 - OK
+*
+18  AsignaGrupo alumno 42003311B  CD  A  2
+19  AsignaGrupo alumno 45004720X  SO  A  1
+20  AsignaGrupo alumno 44062073L  CD B   3
+21  AsignaGrupo alumno 44062073L  CD B   2
+*
+*  Matricula dni asignatura 
+*
+*              22 - Asignatura inexistente
+*              23 - No cumple requisitos
+*              24 - Ya es alumno de la asignatura  indicada
+*              25 - OK
+*
+22   Matricula 44062073L  SE  
+23   Matricula 44062073L  SEG
+24   Matricula 44062073L  CD 
+25   Matricula 44062073L  PII 
+*
+*      CreaGrupoAsig siglasAsig tipoGrupo IDGrupo Dia HoraInicio Aula
+*
+*             26 - Grupo ya existente
+*             27 - Dia incorrecto
+*             28 - Aula no existente
+*             29 - Solape de Aula con grupo B3 PII
+*              30 - OK
+*
+26 CreaGrupoAsig SEG B 2 M 9 T106
+27 CreaGrupoAsig SINT B 4 G 17 AS04
+28 CreaGrupoAsig SINT B 4 J 17 AS40
+29 CreaGrupoAsig SINT B 4 M 9 AS04
+30 CreaGrupoAsig SINT B 4 J 17 AS03
+*
+*       Evalua asignatura ficheroNotasA ficheroNotasB
+*
+*            31 - Asignatura inexistente
+*            32 - Asignatura ya evaluada en ese curso academico
+*            33 - OK
+*
+*                 33.1 - Alumno no matriculado en la asignatura
+*                 33.2 - Nota A/B incorrecta
+*                 33.3 - OK
+*
+31  Evalua CD2 Notas_A Notas_B
+32  Evalua SO   Notas_A Notas_B
+33  Evalua CD   Notas_A Notas_B
+*
+*       Expediente alumno salida
+*
+33 Expediente 44185060F Expediente_GarciaSoto.txt
+*
+*       Ocupacion Aula aula
+*
+34 OcupacionAula AS05
+*
+*
+* <<FIN DEL ARCHIVO DE EJECUCION>>
